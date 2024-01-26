@@ -219,12 +219,24 @@ public class Lab2P2_LinsyPosso {
             System.out.println(i + ". " + biblioteca.get(i).toString());
         }
     }
+
+    public static void eliminarRecursos() {
+        System.out.println("Lista de Mascotas:");
+        for (int i = 0; i < biblioteca.size(); i++) {
+            System.out.println(i + ". " + biblioteca.get(i).toString());
+        }
+        System.out.println("Seleccione el índice de la mascota a eliminar:");
+        int indiceRecurso = Leer.nextInt();
+
+        if (indiceRecurso >= 0 && indiceRecurso < biblioteca.size()) {
+            biblioteca recursoEliminado = biblioteca.remove(indiceRecurso);
+
+        }
+        }
+
     
-    public static void eliminarRecursos(){
-        
-    }
-    
-    public static void modificarRecursos(){
-        
+
+    public static void modificarRecursos() {
+
     }
 }
