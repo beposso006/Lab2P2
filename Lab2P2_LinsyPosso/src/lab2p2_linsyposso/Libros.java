@@ -11,26 +11,26 @@ import java.util.Date;
  * @author 29164
  */
 public class Libros {
-    private String libro;
+    private String titulo;
     private String autor;
     private String genero;
-    private Date añoPublicacion;
+    private String añoPublicacion;
     private boolean disponibilidad;
 
-    public Libros(String libro, String autor, String genero, Date añoPublicacion, boolean disponibilidad) {
-        this.libro = libro;
+    public Libros(String titulo, String autor, String genero, String añoPublicacion, boolean disponibilidad) {
+        this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.añoPublicacion = añoPublicacion;
         this.disponibilidad = disponibilidad;
     }
 
-    public String getLibro() {
-        return libro;
+    public String getTitulo() {
+        return titulo;
     }
 
     public void setLibro(String libro) {
-        this.libro = libro;
+        this.titulo = libro;
     }
 
     public String getAutor() {
@@ -49,11 +49,11 @@ public class Libros {
         this.genero = genero;
     }
 
-    public Date getAñoPublicacion() {
+    public String getAñoPublicacion() {
         return añoPublicacion;
     }
 
-    public void setAñoPublicacion(Date añoPublicacion) {
+    public void setAñoPublicacion(String añoPublicacion) {
         this.añoPublicacion = añoPublicacion;
     }
 
