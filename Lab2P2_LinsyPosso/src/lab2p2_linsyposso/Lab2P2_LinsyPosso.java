@@ -36,6 +36,12 @@ public class Lab2P2_LinsyPosso {
                 int opcionE = Leer.nextInt();
                 switch (opcionE) {
                     case 1:
+                        listarRecursos();
+                        break;
+                    case 2:
+                    default:
+                        running = false;
+                        System.out.println("Byee");
                         break;
                 }
             }
@@ -48,10 +54,17 @@ public class Lab2P2_LinsyPosso {
                 int opcionP = Leer.nextInt();
                 switch (opcionP) {
                     case 1:
+                        listarRecursos();
                         break;
 
                     case 2:
                         crearRecusos();
+                        break;
+
+                    case 3:
+                    default:
+                        running = false;
+                        System.out.println("Byee");
                         break;
                 }
             }
@@ -66,11 +79,12 @@ public class Lab2P2_LinsyPosso {
                 int opcionB = Leer.nextInt();
                 switch (opcionB) {
                     case 1:
+                        listarRecursos();
                         break;
-                        
+
                     case 2:
-                       crearRecusos();
-                       break;
+                        crearRecusos();
+                        break;
                 }
             }
 
@@ -201,8 +215,16 @@ public class Lab2P2_LinsyPosso {
 
     public static void listarRecursos() {
         System.out.println("Lista de Mascotas:");
-                    for (int i = 0; i < biblioteca.size(); i++) {
-                        System.out.println(i + ". " + biblioteca.get(i));
-                    }
+        for (int i = 0; i < biblioteca.size(); i++) {
+            System.out.println(i + ". " + biblioteca.get(i).toString());
         }
     }
+    
+    public static void eliminarRecursos(){
+        
+    }
+    
+    public static void modificarRecursos(){
+        
+    }
+}
