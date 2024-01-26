@@ -4,7 +4,6 @@
  */
 package lab2p2_linsyposso;
 
-import java.util.Date;
 
 /**
  *

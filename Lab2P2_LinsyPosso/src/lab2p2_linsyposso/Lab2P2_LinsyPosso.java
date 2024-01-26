@@ -49,6 +49,10 @@ public class Lab2P2_LinsyPosso {
                 switch (opcionP) {
                     case 1:
                         break;
+
+                    case 2:
+                        crearRecusos();
+                        break;
                 }
             }
             if (Usertemp.getTipo().equals("Bibliotecario")) {
@@ -63,6 +67,10 @@ public class Lab2P2_LinsyPosso {
                 switch (opcionB) {
                     case 1:
                         break;
+                        
+                    case 2:
+                       crearRecusos();
+                       break;
                 }
             }
 
@@ -89,34 +97,112 @@ public class Lab2P2_LinsyPosso {
     }
 
     public static void crearRecusos() {
-        System.out.println("Que recurso le gustaria crear: ");
-        System.out.println("1. Libro");
-        System.out.println("2. Articulos");
-        System.out.println("3. Cursos en linea");
-        System.out.println("4. Conferencias Virtuales");
-        System.out.print("Ingrese una opcion: ");
-        int op = Leer.nextInt();
-        switch (op) {
-            case 1:
-                System.out.print("Ingrese el titulo de el libro: ");
-                String titulo = Leer.next();
-                System.out.print("Ingrese el autor: ");
-                String autor = Leer.next();
-                System.out.println("Ingrese el genero");
-                String genero = Leer.next();
-                System.out.println("Ingrese fecha de publicacion (MM/dd/yyyy)");
-                String fechaP = Leer.nextLine();
-                System.out.println("Ingrese disponibilidad: ");
-                boolean disp = Leer.nextBoolean();
-                Libros libro = new Libros (titulo, autor, genero, fechaP, disp);
-                biblioteca.add(libro);
-                break; //Libros
-                
-            case 2:
-                
-                
-                
+        boolean seguir = true;
+        while (seguir) {
+            System.out.println("Que recurso le gustaria crear: ");
+            System.out.println("1. Libro");
+            System.out.println("2. Articulos");
+            System.out.println("3. Cursos en linea");
+            System.out.println("4. Conferencias Virtuales");
+            System.out.print("Ingrese una opcion: ");
+            int op = Leer.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.print("Ingrese el titulo de el libro: ");
+                    String titulo = Leer.next();
+                    System.out.print("Ingrese el autor: ");
+                    Leer.nextLine();
+                    String autor = Leer.next();
+                    System.out.print("Ingrese el genero: ");
+                    Leer.nextLine();
+                    String genero = Leer.next();
+                    System.out.print("Ingrese fecha de publicacion (MM/dd/yyyy): ");
+                    Leer.nextLine();
+                    String fechaP = Leer.nextLine();
+                    System.out.print("Ingrese disponibilidad: ");
+                    String disp = Leer.next();
+                    boolean existe = false;
+                    if (disp == "si") {
+                        existe = true;
+                    } else {
+                        existe = false;
+                    }
+                    Libros libro = new Libros(titulo, autor, genero, fechaP, existe);
+                    biblioteca.add(libro);
+                    seguir = false;
+                    break;
+                //Libros
+
+                case 2:
+                    System.out.print("Ingrese el titulo de el articulo: ");
+                    String tituloAr = Leer.next();
+                    System.out.print("Ingrese el autor: ");
+                    Leer.nextLine();
+                    String autorAr = Leer.next();
+                    System.out.print("Ingrese el tema: ");
+                    Leer.nextLine();
+                    String tema = Leer.next();
+                    System.out.print("Ingrese fecha de publicacion (MM/dd/yyyy): ");
+                    Leer.nextLine();
+                    String fechaPAr = Leer.nextLine();
+                    System.out.print("Ingrese disponibilidad: ");
+                    String acess = Leer.next();
+                    boolean hayacs = false;
+                    if (acess == "si") {
+                        hayacs = true;
+                    } else {
+                        hayacs = false;
+                    }
+                    Articulos arct = new Articulos(tituloAr, autorAr, tema, fechaPAr, hayacs);
+                    biblioteca.add(arct);
+                    seguir = false;
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese el titulo de el curso: ");
+                    String tituloCurs = Leer.next();
+                    System.out.print("Ingrese el instructor: ");
+                    Leer.nextLine();
+                    String instru = Leer.next();
+                    System.out.print("Ingrese la duracion en semanas: ");
+                    Leer.nextLine();
+                    int duracion = Leer.nextInt();
+                    System.out.print("Ingrese la plataforma: ");
+                    Leer.nextLine();
+                    String plataforma = Leer.nextLine();
+                    Cursos_en_Linea cursos = new Cursos_en_Linea(tituloCurs, instru, duracion, plataforma);
+                    biblioteca.add(cursos);
+                    seguir = false;
+                    break;
+
+                case 4:
+                    System.out.print("Ingrese el titulo de la conferencia: ");
+                    String tituloConf = Leer.next();
+                    System.out.print("Ingrese el conferencista: ");
+                    Leer.nextLine();
+                    String confe = Leer.next();
+                    System.out.print("Ingrese la fecha de conferencia (MM/dd/yyyy): ");
+                    Leer.nextLine();
+                    String fechaConf = Leer.nextLine();
+                    System.out.print("Ingrese la duracion: ");
+                    Leer.nextLine();
+                    int duracionConf = Leer.nextInt();
+                    System.out.print("Ingrese el enlace: ");
+                    Leer.nextLine();
+                    String enlace = Leer.nextLine();
+                    ConferenciasVirtuales confV = new ConferenciasVirtuales(tituloConf, confe, fechaConf, duracionConf, enlace);
+                    biblioteca.add(confV);
+                    seguir = false;
+                    break;
+            }
         }
+
     }
 
-}
+    public static void listarRecursos() {
+        System.out.println("Lista de Mascotas:");
+                    for (int i = 0; i < biblioteca.size(); i++) {
+                        System.out.println(i + ". " + biblioteca.get(i));
+                    }
+        }
+    }

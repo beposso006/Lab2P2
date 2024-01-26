@@ -4,11 +4,15 @@
  */
 package lab2p2_linsyposso;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 29164
  */
 public class Usuario {
+
+   
     private String nombreU;
     private String contra;
     private String tipo;
@@ -42,6 +46,5 @@ public class Usuario {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
+
 }
