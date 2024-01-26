@@ -103,8 +103,19 @@ public class Lab2P2_LinsyPosso {
                 System.out.print("Ingrese el autor: ");
                 String autor = Leer.next();
                 System.out.println("Ingrese el genero");
+                String genero = Leer.next();
+                System.out.println("Ingrese fecha de publicacion (MM/dd/yyyy)");
+                String fechaP = Leer.nextLine();
+                System.out.println("Ingrese disponibilidad: ");
+                boolean disp = Leer.nextBoolean();
+                Libros libro = new Libros (titulo, autor, genero, fechaP, disp);
+                biblioteca.add(libro);
+                break; //Libros
                 
-
+            case 2:
+                
+                
+                
         }
     }
 
