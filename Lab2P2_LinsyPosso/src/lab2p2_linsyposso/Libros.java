@@ -28,8 +28,8 @@ public class Libros {
         return titulo;
     }
 
-    public void setLibro(String libro) {
-        this.titulo = libro;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {

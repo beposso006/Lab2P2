@@ -214,29 +214,62 @@ public class Lab2P2_LinsyPosso {
     }
 
     public static void listarRecursos() {
-        System.out.println("Lista de Mascotas:");
+        System.out.println("Lista de Recursos:");
         for (int i = 0; i < biblioteca.size(); i++) {
             System.out.println(i + ". " + biblioteca.get(i).toString());
         }
     }
 
     public static void eliminarRecursos() {
-        System.out.println("Lista de Mascotas:");
+        System.out.println("Lista de Recursos:");
         for (int i = 0; i < biblioteca.size(); i++) {
             System.out.println(i + ". " + biblioteca.get(i).toString());
         }
-        System.out.println("Seleccione el índice de la mascota a eliminar:");
+        System.out.println("Seleccione el índice del recurso a eliminar:");
         int indiceRecurso = Leer.nextInt();
-
-        if (indiceRecurso >= 0 && indiceRecurso < biblioteca.size()) {
-            biblioteca recursoEliminado = biblioteca.remove(indiceRecurso);
+        if (indiceRecurso >= 0 && indiceRecurso <= biblioteca.size()) {
+            biblioteca.remove(indiceRecurso);
 
         }
-        }
-
-    
+    }
 
     public static void modificarRecursos() {
-
+        System.out.println("Lista de Recursos:");
+        for (int i = 0; i < biblioteca.size(); i++) {
+            System.out.println(i + ". " + biblioteca.get(i).toString());
+        }
+        System.out.println("Seleccione el índice del recurso a eliminar:");
+        int indiceRecurso = Leer.nextInt();
+        if (indiceRecurso >= 0 && indiceRecurso <= biblioteca.size()) {
+            if (biblioteca.get(indiceRecurso) instanceof Libros) {
+                System.out.print("Ingrese el nuevo titulo de el libro: ");
+                String titulo = Leer.next();
+                ((Libros)biblioteca.get(indiceRecurso)).setTitulo(titulo);
+                System.out.print("Ingrese el nuevo autor: ");
+                Leer.nextLine();
+                String autor = Leer.next();
+                ((Libros)biblioteca.get(indiceRecurso)).setAutor(autor);
+                System.out.print("Ingrese el genero: ");
+                Leer.nextLine();
+                String genero = Leer.next();
+                ((Libros)biblioteca.get(indiceRecurso)).setGenero(genero);
+                System.out.print("Ingrese fecha de publicacion (MM/dd/yyyy): ");
+                Leer.nextLine();
+                String fechaP = Leer.nextLine();
+                ((Libros)biblioteca.get(indiceRecurso)).setAñoPublicacion(fechaP);
+                System.out.print("Ingrese disponibilidad: ");
+                String disp = Leer.next();              
+                    boolean existe = false;
+                    if (disp == "si") {
+                        existe = true;
+                    } else {
+                        existe = false;
+                    }
+                    ((Libros)biblioteca.get(indiceRecurso)).setDisponibilidad(existe);
+            }
+            if (biblioteca.get(indiceRecurso) instanceof Articulos) {
+                
+            }
+        }
     }
 }
