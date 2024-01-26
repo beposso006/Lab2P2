@@ -85,6 +85,10 @@ public class Lab2P2_LinsyPosso {
                     case 2:
                         crearRecusos();
                         break;
+
+                    case 3:
+                        eliminarRecursos();
+                        break;
                 }
             }
 
@@ -244,31 +248,77 @@ public class Lab2P2_LinsyPosso {
             if (biblioteca.get(indiceRecurso) instanceof Libros) {
                 System.out.print("Ingrese el nuevo titulo de el libro: ");
                 String titulo = Leer.next();
-                ((Libros)biblioteca.get(indiceRecurso)).setTitulo(titulo);
+                ((Libros) biblioteca.get(indiceRecurso)).setTitulo(titulo);
                 System.out.print("Ingrese el nuevo autor: ");
                 Leer.nextLine();
                 String autor = Leer.next();
-                ((Libros)biblioteca.get(indiceRecurso)).setAutor(autor);
+                ((Libros) biblioteca.get(indiceRecurso)).setAutor(autor);
                 System.out.print("Ingrese el genero: ");
                 Leer.nextLine();
                 String genero = Leer.next();
-                ((Libros)biblioteca.get(indiceRecurso)).setGenero(genero);
+                ((Libros) biblioteca.get(indiceRecurso)).setGenero(genero);
                 System.out.print("Ingrese fecha de publicacion (MM/dd/yyyy): ");
                 Leer.nextLine();
                 String fechaP = Leer.nextLine();
-                ((Libros)biblioteca.get(indiceRecurso)).setAñoPublicacion(fechaP);
-                System.out.print("Ingrese disponibilidad: ");
-                String disp = Leer.next();              
-                    boolean existe = false;
-                    if (disp == "si") {
-                        existe = true;
-                    } else {
-                        existe = false;
-                    }
-                    ((Libros)biblioteca.get(indiceRecurso)).setDisponibilidad(existe);
+                ((Libros) biblioteca.get(indiceRecurso)).setAñoPublicacion(fechaP);
+                System.out.print("Ingrese la nueva disponibilidad: ");
+                String disp = Leer.next();
+                boolean existe = false;
+                if (disp == "si") {
+                    existe = true;
+                } else {
+                    existe = false;
+                }
+                ((Libros) biblioteca.get(indiceRecurso)).setDisponibilidad(existe);
             }
             if (biblioteca.get(indiceRecurso) instanceof Articulos) {
-                
+                System.out.print("Ingrese el nuevo titulo de el articulo: ");
+                String tituloAr = Leer.next();
+                ((Articulos) biblioteca.get(indiceRecurso)).setTitulo(tituloAr);
+                System.out.print("Ingrese el nuevo autor: ");
+                Leer.nextLine();
+                String autorAr = Leer.next();
+                ((Articulos) biblioteca.get(indiceRecurso)).setAutor(autorAr);
+                System.out.print("Ingrese el nuevo tema: ");
+                Leer.nextLine();
+                String tema = Leer.next();
+                ((Articulos) biblioteca.get(indiceRecurso)).setTema(tema);
+                System.out.print("Ingrese la nueva fecha de publicacion (MM/dd/yyyy): ");
+                Leer.nextLine();
+                String fechaPAr = Leer.nextLine();
+                ((Articulos) biblioteca.get(indiceRecurso)).setAñoPublicacion(fechaPAr);
+                System.out.print("Ingrese la nueva disponibilidad: ");
+                String acess = Leer.next();
+                boolean hayacs = false;
+                if (acess == "si") {
+                    hayacs = true;
+                } else {
+                    hayacs = false;
+                }
+                ((Articulos) biblioteca.get(indiceRecurso)).setAcceso(hayacs);
+
+                if (biblioteca.get(indiceRecurso) instanceof Cursos_en_Linea) {
+                    System.out.print("Ingrese el nuevo titulo de el curso: ");
+                    String tituloCurs = Leer.next();
+                    ((Cursos_en_Linea) biblioteca.get(indiceRecurso)).setTitulo(tituloCurs);
+                    System.out.print("Ingrese el instructor: ");
+                    Leer.nextLine();
+                    String instru = Leer.next();
+                    ((Cursos_en_Linea) biblioteca.get(indiceRecurso)).setInstructor(instru);
+                    System.out.print("Ingrese la duracion en semanas: ");
+                    Leer.nextLine();
+                    int duracion = Leer.nextInt();
+                    ((Cursos_en_Linea) biblioteca.get(indiceRecurso)).setDuracion(duracion);
+                    System.out.print("Ingrese la plataforma: ");
+                    Leer.nextLine();
+                    String plataforma = Leer.nextLine();
+                    ((Cursos_en_Linea) biblioteca.get(indiceRecurso)).setPlataforma(plataforma);
+                    
+                    if (biblioteca.get(indiceRecurso) instanceof ConferenciasVirtuales) {
+                        
+                    }
+                    
+                }
             }
         }
     }
