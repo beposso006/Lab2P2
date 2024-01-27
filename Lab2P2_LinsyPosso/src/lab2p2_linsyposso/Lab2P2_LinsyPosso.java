@@ -255,7 +255,7 @@ public class Lab2P2_LinsyPosso {
         for (int i = 0; i < biblioteca.size(); i++) {
             System.out.println(i + ". " + biblioteca.get(i).toString());
         }
-        System.out.println("Seleccione el índice del recurso a eliminar:");
+        System.out.print("Seleccione el índice del recurso a eliminar:");
         int indiceRecurso = Leer.nextInt();
         if (indiceRecurso >= 0 && indiceRecurso <= biblioteca.size()) {
             biblioteca.remove(indiceRecurso);
@@ -268,7 +268,7 @@ public class Lab2P2_LinsyPosso {
         for (int i = 0; i < biblioteca.size(); i++) {
             System.out.println(i + ". " + biblioteca.get(i).toString());
         }
-        System.out.println("Seleccione el índice del recurso a eliminar:");
+        System.out.print("Seleccione el índice del recurso a eliminar:");
         int indiceRecurso = Leer.nextInt();
         if (indiceRecurso >= 0 && indiceRecurso <= biblioteca.size()) {
             if (biblioteca.get(indiceRecurso) instanceof Libros) {
