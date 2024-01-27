@@ -31,7 +31,8 @@ public class Lab2P2_LinsyPosso {
             if (Usertemp.getTipo().equals("Estudiante")) {
                 System.out.println("--Menu--");
                 System.out.println("1. Listar Recursos");
-                System.out.println("2. Salir");
+                System.out.println("2. Volver al loggin");
+                System.out.println("3. Salir");
                 System.out.print("Ingrese una opcion: ");
                 int opcionE = Leer.nextInt();
                 switch (opcionE) {
@@ -39,10 +40,15 @@ public class Lab2P2_LinsyPosso {
                         listarRecursos();
                         break;
                     case 2:
+                        inicioSesion();
+                        break;
+
+                    case 3:
                     default:
                         running = false;
                         System.out.println("Byee");
                         break;
+
                 }
             }
             if (Usertemp.getTipo().equals("Profesor")) {
@@ -50,6 +56,7 @@ public class Lab2P2_LinsyPosso {
                 System.out.println("1. Listar Recursos");
                 System.out.println("2. Crear Recurso");
                 System.out.println("3. Salir");
+                System.out.println("4. Volver al loggin");
                 System.out.print("Ingrese una opcion: ");
                 int opcionP = Leer.nextInt();
                 switch (opcionP) {
@@ -66,6 +73,10 @@ public class Lab2P2_LinsyPosso {
                         running = false;
                         System.out.println("Byee");
                         break;
+
+                    case 4:
+                        inicioSesion();
+                        break;
                 }
             }
             if (Usertemp.getTipo().equals("Bibliotecario")) {
@@ -75,6 +86,7 @@ public class Lab2P2_LinsyPosso {
                 System.out.println("3. Eliminar Recurso");
                 System.out.println("4. Modificar");
                 System.out.println("5. Salir");
+                System.out.println("6. Volver al loggin");
                 System.out.print("Ingrese una opcion: ");
                 int opcionB = Leer.nextInt();
                 switch (opcionB) {
@@ -88,6 +100,20 @@ public class Lab2P2_LinsyPosso {
 
                     case 3:
                         eliminarRecursos();
+                        break;
+
+                    case 4:
+                        modificarRecursos();
+                        break;
+
+                    case 5:
+                    default:
+                        running = false;
+                        System.out.println("Byee");
+                        break;
+                        
+                    case 6:
+                        inicioSesion();
                         break;
                 }
             }
@@ -313,11 +339,30 @@ public class Lab2P2_LinsyPosso {
                     Leer.nextLine();
                     String plataforma = Leer.nextLine();
                     ((Cursos_en_Linea) biblioteca.get(indiceRecurso)).setPlataforma(plataforma);
-                    
+
                     if (biblioteca.get(indiceRecurso) instanceof ConferenciasVirtuales) {
-                        
+                        System.out.print("Ingrese el nuevo titulo de la conferencia: ");
+                        String tituloConf = Leer.next();
+                        ((ConferenciasVirtuales) biblioteca.get(indiceRecurso)).setTitulo(tituloConf);
+                        System.out.print("Ingrese el conferencista: ");
+                        Leer.nextLine();
+                        String confe = Leer.next();
+                        ((ConferenciasVirtuales) biblioteca.get(indiceRecurso)).setConferencista(confe);
+                        System.out.print("Ingrese la fecha de conferencia (MM/dd/yyyy): ");
+                        Leer.nextLine();
+                        String fechaConf = Leer.nextLine();
+                        ((ConferenciasVirtuales) biblioteca.get(indiceRecurso)).setFecha(fechaConf);
+                        System.out.print("Ingrese la duracion: ");
+                        Leer.nextLine();
+                        int duracionConf = Leer.nextInt();
+                        ((ConferenciasVirtuales) biblioteca.get(indiceRecurso)).setDuracion(duracionConf);
+                        System.out.print("Ingrese el enlace: ");
+                        Leer.nextLine();
+                        String enlace = Leer.nextLine();
+                        ((ConferenciasVirtuales) biblioteca.get(indiceRecurso)).setEnlace(enlace);
+
                     }
-                    
+
                 }
             }
         }
